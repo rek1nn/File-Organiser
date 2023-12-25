@@ -12,3 +12,9 @@ File Organizer made to organise your desktop or any other directories. There are
 
 
 Thank you for checking out File Organizer! Feel free to explore the project on GitHub for additional details and updates.
+
+**Before**
+![image](https://github.com/ValikRTMM/FileOrganizer/assets/116544714/31b73862-55e2-49c7-bd17-d71042747c93)
+
+**After**
+![image](https://github.com/ValikRTMM/FileOrganizer/assets/116544714/b58f51a4-aa02-486c-9987-2fac050c4edd)
