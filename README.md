@@ -8,6 +8,7 @@ File Organizer made to organise your desktop or any other directories. There are
 
 # How to Use
 -> Run the executable: file_organizer.exe
+
 -> Alternatively, execute the following command in your terminal: python3 or python file_organizer.py
 
 
