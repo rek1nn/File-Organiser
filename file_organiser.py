@@ -1,15 +1,12 @@
 """Creator: https://t.me/valikmm
 Date: 25.12.2023
 """
-
-# Allows to do some high level operations on the file system
 import os
 import shutil
 
-
 # Avaliable types
 IMAGE_TYPES = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".svg",
-               ".mov", ".heic", ".webm", ]
+               ".mov", ".heic", ".webm", ".avif"]
 DOCUMENT_TYPES = [".doc", ".docx", ".pdf", ".ppt",
                   ".pptx", ".xls", ".xlsx", ".txt", ".rtf"]
 AUDIO_TYPES = [".mp3", ".wav", ".aac", ".flac", ".ogg", ".m4a"]
@@ -28,15 +25,18 @@ CUSTOM_EXTENSION = [".psd", ".myext", ".xyzdata",
 PURPLE_COLOR = "\033[95m"
 DEFAULT_COLOR = "\033[0m"
 
+# Home directory of user. Example: C:\Users\Pro
+USER_HOME_DIRECTORY = os.path.expanduser("~")
 
-def sort_shortcuts(path):
+
+def sort_shortcuts(path=USER_HOME_DIRECTORY):
     try:
         # Flag to track if any files were moved
         files_moved = False
 
         for file in os.listdir(path):
 
-            # IMAGES
+            # IMAGE
             if any(file.lower().endswith(t) for t in IMAGE_TYPES):
                 """Create a path to the file"""
                 file_path = os.path.join(path, file)
@@ -52,7 +52,7 @@ def sort_shortcuts(path):
                 print(f"Successfully sorted: {file}")
                 files_moved = True
 
-            # DOCUMENTS
+            # DOCUMENT
             elif any(file.lower().endswith(t) for t in DOCUMENT_TYPES):
                 file_path = os.path.join(path, file)
                 folder_path = os.path.join(path, "Documents")
@@ -88,7 +88,7 @@ def sort_shortcuts(path):
                 print(f"Successfully sorted: {file}")
                 files_moved = True
 
-            # ARCHIVES
+            # ARCHIVE
             elif any(file.lower().endswith(t) for t in ARCHIVE_TYPES):
                 file_path = os.path.join(path, file)
                 folder_path = os.path.join(path, "Archives")
@@ -150,10 +150,15 @@ def sort_shortcuts(path):
 
         if not files_moved:
             print("No files to move!")
-    except (FileNotFoundError, PermissionError) as e:
-        print(f"Error: {e}")
+    
+    except FileNotFoundError as e:
+        print(f"Error occured!: {e}")
+    except shutil.Error as e:
+        """If a name exists in the direction, rename it with the prefix Copy_ and rerun program"""
+        os.rename(file_path, os.path.join(path, "Copy_"+file))
+        sort_shortcuts(path)
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        print(f"An unexpected error occurred! {e}")
 
 
 def main():
@@ -180,14 +185,12 @@ def main():
 
             elif response == "2":
                 """Automete sort Desktop"""
-                user_home_directory = os.path.expanduser("~")
-                desktop = os.path.join(user_home_directory, "Desktop")
+                desktop = os.path.join(USER_HOME_DIRECTORY, "Desktop")
                 sort_shortcuts(desktop)
 
             elif response == "3":
                 """Automate sort downloads"""
-                user_home_directory = os.path.expanduser("~")
-                desktop = os.path.join(user_home_directory, "Downloads")
+                desktop = os.path.join(USER_HOME_DIRECTORY, "Downloads")
                 sort_shortcuts(desktop)
 
             elif response == "4":
@@ -198,12 +201,12 @@ def main():
                 raise ValueError(
                     "Invalid Input! Please choose a number from the menu!")
 
-        except (FileExistsError, PermissionError) as e:
+        except FileExistsError as e:
             print(f"ERROR OCCURRED! {e}")
         except ValueError as e:
             print(e)
         except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+            print(f"An unexpected error occurred! {e}")
 
 
 if __name__ == "__main__":
