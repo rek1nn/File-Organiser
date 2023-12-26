@@ -1,15 +1,19 @@
+"""Creator: https://t.me/valikmm
+Date: 25.12.2023
+"""
+
 # Allows to do some high level operations on the file system
 import os
 import shutil
 
 
 # Avaliable types
-IMAGE_TYPES = [".jpg", ".png", ".gif", ".bmp", ".tiff", ".svg", ".jpeg",
-               ".mov", ".heic", ".webm"]
+IMAGE_TYPES = [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".svg",
+               ".mov", ".heic", ".webm", ]
 DOCUMENT_TYPES = [".doc", ".docx", ".pdf", ".ppt",
                   ".pptx", ".xls", ".xlsx", ".txt", ".rtf"]
-AUDIO_TYPES = [".mp3", ".wav", ".aac", ".flac", ".ogg"]
-VIDEO_TYPES = [".mp4", "m4a", ".avi", ".mkv", ".mov", ".wmv"]
+AUDIO_TYPES = [".mp3", ".wav", ".aac", ".flac", ".ogg", ".m4a"]
+VIDEO_TYPES = [".mp4", ".avi", ".mkv", ".mov", ".wmv"]
 ARCHIVE_TYPES = [".zip", ".rar", ".7z", ".tar.gz", ".tar"]
 EXECUTABLE_TYPES = [".exe", ".dmg", ".apk", ".deb", ".rpm"]
 CODE_TYPES = [".html", ".css", ".js", ".py", ".java", ".cpp",
@@ -203,10 +207,10 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Hi everyone! Welcome to this file organization program. \nHere's how it works:\
-          \n[1] Enter my own directory: Manually input the full path to the directory you want to sort.\
-          \n[2] Sort Desktop: Automatically organizes files on your Desktop.\
-          \n[3] Sort Downloads: Automatically organizes files in your Downloads folder.\
-          \n[4] Exit: Exit the program. \nLet's get started!\n\n")
+    print("Hi everyone! Welcome to this file organisation program. \nHere's how it works:\
+          \n[1] Manually input the full path to the directory you want to sort.\
+          \n[2] Automatically organizes files on your Desktop.\
+          \n[3] Automatically organizes files in your Downloads folder.\
+          \n[4] Exit the program. \nLet's get started!\n\n")
 
     main()
