@@ -1,6 +1,7 @@
 Hello everyone, and welcome to File Organiser!
 
 File Organizer made to organise your desktop or any other directories. There are ton of the same projects on GitHub, but there is only my vision to this program and expirience in the programming.
+
 ✔️ Works seamlessly on macOS.
 
 [!] This is only my second attempt at creating a project, and I must confess, I was also afraid because of my 
