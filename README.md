@@ -13,6 +13,6 @@ File Organizer made to organise your desktop or any other directories. There are
 
 Thank you for checking out File Organizer! Feel free to explore the project on GitHub for additional details and updates.
 
-**How it's work**
+**How it works**
 ![promo](https://github.com/ValikRTMM/File-Organiser/assets/116544714/760ea0eb-3a6c-40a3-a27a-43ef57313ca6)
 
